@@ -1,4 +1,4 @@
-## Use this script to process the FamilySleeps 3.	Demographic Information
+## Use this script to process the FamilySleeps Demographic Information
 # It can be run from the command line as follows:
 # Rscript demographic_questionaire.R2 input_file output_file
 
