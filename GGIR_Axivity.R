@@ -28,9 +28,13 @@ GGIR(datadir = datadir,
 # GGIR automatically writes the result files to the output directory, we now what to read these back in to extract only the variables of interest, and combine them all into one file.
 # I am reading back in the person level summary files, which are derived from the variables in the day/night level summaries
 
-part2_results <- read.csv("/home/lfahey/FamilySleeps/axivity/results/output_raw_data/results/part2_summary.csv", header=T)
-part4_results <- read.csv("/home/lfahey/FamilySleeps/axivity/results/output_raw_data/results/part4_summary_sleep_cleaned.csv", header=T)
-part5_results <- read.csv("/home/lfahey/FamilySleeps/axivity/results/output_raw_data/results/part5_personsummary_MM_L40M100V400_T5A5.csv", header=T)
+part2_path <- file.path(outputfile, "output_raw_data/results/part2_summary.csv")
+part4_path <- file.path(outputfile, "output_raw_data/results/part4_summary.csv")
+part5_path <- file.path(outputfile, "output_raw_data/results/part5_summary.csv")
+
+part2_results <- read.csv(part2_path, header=T)
+part4_results <- read.csv(part4_path, header=T)
+part5_results <- read.csv(part5_path, header=T)
 
 # Filter to only columns of interest
 # grep("daysleeper", names(part4_results), value = TRUE) # to find exact column names
